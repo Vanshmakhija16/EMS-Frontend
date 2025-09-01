@@ -10,7 +10,7 @@ const Start = () => {
     <div className="start-container">
       {/* Title */}
       <h1 className="title">Employee Management System</h1>
-      <p className="subtitle">Choose your login type to access the system</p>
+      <p className="subtitle">Choose your login/Signup type to access the system</p>
 
       {/* Cards */}
       <div className="cards-container">
@@ -29,14 +29,7 @@ const Start = () => {
           >
             Login as Admin
           </button>
-          {/* Signup Button */}
-          <button
-            className="btn admin-btn"
-            style={{ marginTop: "10px" }}
-            onClick={() => navigate("/adminsignup")}
-          >
-            Signup as Admin
-          </button>
+      
         </div>
 
         {/* Employee Login */}
