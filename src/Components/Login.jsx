@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Login.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 const Login = () => {
     const [error, setError] = useState()
