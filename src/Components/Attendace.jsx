@@ -6,8 +6,7 @@ const Attendance = () => {
 
   // Fetch all employees' attendance
   useEffect(() => {
-    axios
-      .get(`${backend_url}`/employee/attendance``)
+    axios      .get(`${backend_url}/employee/attendance`)
       .then((result) => {
         if (result.data.Status) {
           setAttendance(result.data.Result);
