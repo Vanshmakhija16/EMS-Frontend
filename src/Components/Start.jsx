@@ -29,6 +29,14 @@ const Start = () => {
           >
             Login as Admin
           </button>
+          {/* Signup Button */}
+          <button
+            className="btn admin-btn"
+            style={{ marginTop: "10px" }}
+            onClick={() => navigate("/adminsignup")}
+          >
+            Signup as Admin
+          </button>
         </div>
 
         {/* Employee Login */}
