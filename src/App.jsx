@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import AdminSignup from './Components/AdminSignup';
 import Login from './Components/Login';
 import Dashboard from './Components/Dashboard';
 import Home from './Components/Home';
@@ -27,6 +27,7 @@ function App() {
         {/* Public routes */}
         <Route path='/' element={<Start />} />
         <Route path='/adminlogin' element={<Login />} />
+        <Route path='/adminsignup' element={<AdminSignup />} /> 
         <Route path='/employee_login' element={<EmployeeLogin />} />
         <Route path='/employee_detail/:id' element={<EmployeeDetail />} />
         <Route path='/employee_detail/:id/attendance' element={<EmployeeAttendance />} />
