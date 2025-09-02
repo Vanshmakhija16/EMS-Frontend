@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 const Home = () => {
   const [adminTotal, setAdminTotal] = useState(0)
