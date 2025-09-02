@@ -21,37 +21,61 @@ import EmployeeAttendance from './Components/EmployeeAttendance';
 import EmployeeDashboard from './Components/EmployeeDashboard';
 
 function App() {
+  // Collect all top-level routes into an array for logging
+  const publicRoutes = [
+    { path: "/", element: <Start /> },
+    { path: "/adminlogin", element: <Login /> },
+    { path: "/adminsignup", element: <AdminSignup /> },
+    { path: "/employee_login", element: <EmployeeLogin /> },
+    { path: "/employee_detail/:id", element: <EmployeeDetail /> },
+    { path: "/employee_detail/:id/attendance", element: <EmployeeAttendance /> },
+    { path: "/tasks/:id", element: <EmployeeTasks /> },
+    { path: "/employee/dashboard", element: <EmployeeDashboard /> },
+  ];
+
+  const dashboardRoutes = [
+    { path: "", element: <Home /> }, // index route
+    { path: "employee", element: <Employee /> },
+    { path: "category", element: <Category /> },
+    { path: "profile", element: <Profile /> },
+    { path: "add_category", element: <AddCategory /> },
+    { path: "add_employee", element: <AddEmployee /> },
+    { path: "edit_employee/:id", element: <EditEmployee /> },
+    { path: "tasks", element: <AssignTask /> },
+  ];
+
+  // 🔎 Debug logging: print all routes before rendering
+  console.log("🔍 Public Routes:");
+  publicRoutes.forEach(r => console.log(" -", r.path));
+
+  console.log("🔍 Dashboard Routes:");
+  dashboardRoutes.forEach(r => console.log(" -", r.path));
+
   return (
     <BrowserRouter>
       <Routes>
         {/* Public routes */}
-        <Route path='/' element={<Start />} />
-        <Route path='/adminlogin' element={<Login />} />
-        <Route path='/adminsignup' element={<AdminSignup />} /> 
-        <Route path='/employee_login' element={<EmployeeLogin />} />
-        <Route path='/employee_detail/:id' element={<EmployeeDetail />} />
-        <Route path='/employee_detail/:id/attendance' element={<EmployeeAttendance />} />
-        <Route path='/tasks/:id' element={<EmployeeTasks />} />
-        <Route path='/employee/dashboard' element={<EmployeeDashboard />} />
+        {publicRoutes.map(r => (
+          <Route key={r.path} path={r.path} element={r.element} />
+        ))}
 
         {/* Protected admin dashboard routes */}
         <Route
-          path='/dashboard'
+          path="/dashboard"
           element={
             <PrivateRoute>
               <Dashboard />
             </PrivateRoute>
           }
         >
-          {/* Nested admin dashboard routes */}
-          <Route index element={<Home />} />
-          <Route path='employee' element={<Employee />} />
-          <Route path='category' element={<Category />} />
-          <Route path='profile' element={<Profile />} />
-          <Route path='add_category' element={<AddCategory />} />
-          <Route path='add_employee' element={<AddEmployee />} />
-          <Route path='edit_employee/:id' element={<EditEmployee />} />
-          <Route path='tasks' element={<AssignTask />} />
+          {dashboardRoutes.map(r => (
+            <Route
+              key={r.path || "index"}
+              index={r.path === ""}
+              path={r.path || undefined}
+              element={r.element}
+            />
+          ))}
         </Route>
       </Routes>
     </BrowserRouter>
