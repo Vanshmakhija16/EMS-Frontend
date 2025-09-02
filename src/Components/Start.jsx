@@ -29,6 +29,13 @@ const Start = () => {
           >
             Login as Admin
           </button>
+
+        <button
+          className="btn admin-btn"
+          onClick={() => alert("Signup button clicked")}
+          style={{ marginTop: "10px", border: "2px solid red", padding: "10px", backgroundColor: "yellow" }} >
+          Signup as Admin
+        </button>
       
         </div>
 
@@ -47,14 +54,6 @@ const Start = () => {
           >
             Login as Employee
           </button>
-
-          <button
-                className="btn admin-btn"
-                onClick={() => alert("Signup button clicked")}
-                style={{ marginTop: "10px", border: "2px solid red", padding: "10px", backgroundColor: "yellow" }}
-              >
-                        Signup as Admin
-        </button>
 
         </div>
         
