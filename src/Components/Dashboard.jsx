@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import axios from "axios";
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 const Dashboard = () => {
   const navigate = useNavigate();
