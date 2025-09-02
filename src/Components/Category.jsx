@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 const Category = () => {
   const [category, setCategory] = useState([])
