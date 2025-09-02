@@ -14,20 +14,20 @@ const Login = () => {
     const navigate = useNavigate()
     axios.defaults.withCredentials = true;
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    //  const handleSubmit = (e) => {
+    //     e.preventDefault()
 
-        axios.post(`${backend_url}/auth/adminlogin`, values)
-            .then(result => {
-                if (result.data.loginStatus) {
-                    localStorage.setItem("valid", "true");
-                    navigate('/dashboard')
-                } else {
-                    setError(result.data.Error)
-                }
-            })
-            .catch(err => console.log(err))
-    }
+    //     axios.post(`${backend_url}/auth/adminlogin`, values)
+    //         .then(result => {
+    //             if (result.data.loginStatus) {
+    //                 localStorage.setItem("valid", "true");
+    //                 navigate('/dashboard')
+    //             } else {
+    //                 setError(result.data.Error)
+    //             }
+    //         })
+    //         .catch(err => console.log(err))
+    // }
 
     return (
         <div className="login-container">
