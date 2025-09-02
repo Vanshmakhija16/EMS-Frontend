@@ -68,14 +68,24 @@ function App() {
             </PrivateRoute>
           }
         >
-          {dashboardRoutes.map(r => (
-            <Route
-              key={r.path || "index"}
-              index={r.path === ""}
-              path={r.path || undefined}
-              element={r.element}
-            />
-          ))}
+          {dashboardRoutes.map(r => {
+            // 🔒 Runtime guard: check for invalid or suspicious paths
+            if (r.path === undefined || r.path === null) {
+              throw new Error(`Invalid route path detected: ${r.path}`);
+            }
+            if (typeof r.path === "string" && r.path.includes(":/") && !r.path.includes(":id")) {
+              throw new Error(`Suspicious route path detected: ${r.path}`);
+            }
+
+            return (
+              <Route
+                key={r.path || "index"}
+                index={r.path === ""}
+                path={r.path || undefined}
+                element={r.element}
+              />
+            );
+          })}
         </Route>
       </Routes>
     </BrowserRouter>
