@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import moment from "moment";
+const backend_url = import.meta.env.VITE_BACKEND_URL;
+
 
 const EmployeeAttendance = () => {
   const { id } = useParams();
