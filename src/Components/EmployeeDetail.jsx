@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 const EmployeeDetail = () => {
   const officeLocation = { lat: 26.9136, lng: 75.7858 };
@@ -24,7 +25,7 @@ const EmployeeDetail = () => {
 
   // Fetch employee data
   useEffect(() => {
-    axios.get(`http://localhost:3000/employee/detail/${id}`)
+    axios.get(`const backend_url/employee/detail/${id}`)
       .then(result => {
         if (result.data.Status && result.data.employee) {
           setEmployee(result.data.employee);
