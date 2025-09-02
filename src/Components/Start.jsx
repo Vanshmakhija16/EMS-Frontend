@@ -33,7 +33,7 @@ const Start = () => {
         <button
           className="btn admin-btn"
           onClick={() => alert("Signup button clicked")}
-          style={{ marginTop: "10px", border: "2px solid red", padding: "10px", backgroundColor: "yellow" }} >
+          style={{ marginTop: "10px", border: "2px solid red", padding: "10px", backgroundColor: "green" }} >
           Signup as Admin
         </button>
       
