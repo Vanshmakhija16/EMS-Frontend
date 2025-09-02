@@ -27,9 +27,9 @@ function App() {
     { path: "/adminlogin", element: <Login /> },
     { path: "/adminsignup", element: <AdminSignup /> },
     { path: "/employee_login", element: <EmployeeLogin /> },
-    { path: "/employee_detail/:id", element: <EmployeeDetail /> },
-    { path: "/employee_detail/:id/attendance", element: <EmployeeAttendance /> },
-    { path: "/tasks/:id", element: <EmployeeTasks /> },
+    // { path: "/employee_detail/:id", element: <EmployeeDetail /> },
+    // { path: "/employee_detail/:id/attendance", element: <EmployeeAttendance /> },
+    // { path: "/tasks/:id", element: <EmployeeTasks /> },
     { path: "/employee/dashboard", element: <EmployeeDashboard /> },
   ];
 
@@ -40,7 +40,7 @@ function App() {
     { path: "profile", element: <Profile /> },
     { path: "add_category", element: <AddCategory /> },
     { path: "add_employee", element: <AddEmployee /> },
-    { path: "edit_employee/:id", element: <EditEmployee /> },
+    // { path: "edit_employee/:id", element: <EditEmployee /> },
     { path: "tasks", element: <AssignTask /> },
   ];
 
