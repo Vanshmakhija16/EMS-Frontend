@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom'
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 const EmployeeLogin = () => {
   const [values, setValues] = useState({
